@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+Посты тега {{ single_tag.name }}
+{% for post in single_tag.posts %}
+<ul>
+    <li><a href="{{ url_for('tag_posts', tag_str=post.title) }}"> {{ post.title }}</a> <small>Автор поста:</small> {{ post.author.name }}</li>
+</ul>
+
+
+
+{% endfor %}
+
+{% endblock content %}

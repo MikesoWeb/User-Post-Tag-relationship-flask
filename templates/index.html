@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+Список тегов блога:
+
+<ul>
+    {% for tag in all_tags %}
+
+    <li><a href="{{ url_for('post_tags', post_str=tag.name) }}"> {{ tag.name }} </a>({{ tag.posts|count }})</li>
+
+    {% endfor %}
+</ul>
+<br>
+
+
+
+{% endblock content %}

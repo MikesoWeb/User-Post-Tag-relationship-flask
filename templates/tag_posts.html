@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+Теги поста {{ single_post.title }}
+{% for tag in single_post.tags %}
+<ol>
+    <li><a href="{{ url_for('post_tags', post_str=tag.name) }}">{{ tag.name }}</a></li>
+</ol>
+
+{% endfor %}
+{% endblock content %}
